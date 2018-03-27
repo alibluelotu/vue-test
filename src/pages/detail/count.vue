@@ -18,7 +18,7 @@
                   适用地区：
               </div>
               <div class="sales-board-line-right">
-                  <v-selection :selections="districts"></v-selection>
+                  <vselection :selections="districts"></vselection>
               </div>
           </div>
           <div class="sales-board-line">
@@ -244,9 +244,14 @@
 </template>
 
 <script>
-
+import Vselection from '../../components/selection';
+import VChooser from '../../components/chooser';
 export default {
-  
+  components:{
+      Vselection,
+      VChooser
+  },
+ 
   data () {
     return {
       buyTypes: [

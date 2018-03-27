@@ -18,7 +18,7 @@ export default {
     selections: {
       type: Array,
       default: [{
-        label: 'test',
+        label: 'test',  //父组件不传值时的默认值
         value: 0
       }]
     }

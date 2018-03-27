@@ -18,7 +18,7 @@
                   产品类型：
               </div>
               <div class="sales-board-line-right">
-                  <v-selection :selections="buyTypes" @on-change="onParamChange('buyType', $event)"></v-selection>
+                  <vselection :selections="buyTypes"></vselection>
               </div>
           </div>
           <div class="sales-board-line">
@@ -114,10 +114,22 @@
 
 <script>
 import Vselection from '../../components/selection';
-
+import VChooser from '../../components/chooser';
+import VCounter from '../../components/counter';
+import VMulChooser from '../../components/multiplyChooser';
+import Dialog from '../../components/dialog';
+import BankChooser from '../../components/bankChooser';
+import CheckOrder from '../../components/checkOrder'
+import _ from 'lodash';
 export default {
   components:{
-      Vselection
+      Vselection,
+      VChooser,
+      VCounter,
+      MyDialog: Dialog,
+      VMulChooser,
+      BankChooser,
+      CheckOrder
   },
   data () {
     return {
@@ -181,7 +193,7 @@ export default {
       this.getPrice()
     },
     getPrice () {
-      let buyVersionsArray = _.map(this.versions, (item) => {
+      let buyVersionsArray =_.map(this.versions, (item) => {
         return item.value
       })
       let reqParams = {
@@ -211,7 +223,7 @@ export default {
       this.bankId = bankObj.id
     },
     confirmBuy () {
-      let buyVersionsArray = _.map(this.versions, (item) => {
+      let buyVersionsArray =_.map(this.versions, (item) => {
         return item.value
       })
       let reqParams = {

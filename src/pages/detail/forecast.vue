@@ -58,9 +58,13 @@
 </template>
 
 <script>
-
+import VCounter from '../../components/counter';
+import VMulChooser from '../../components/multiplyChooser'
 export default {
- 
+  components:{
+      VMulChooser,
+      VCounter
+  },
   data () {
     return {
       versionList: [

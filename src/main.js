@@ -23,7 +23,7 @@ let router=new VueRouter({
     {
       path:'/detail',
       component:DetailPage,
-      redirect: '/detail/analysis',
+      redirect: '/detail/analysis',  //直接访问第一个详情页面
       children:[
         {
           path:'forecast',
@@ -53,4 +53,6 @@ new Vue({
     components: { Layout }
 });
 
-
+if (module.hot) {
+  module.hot.accept();
+}
